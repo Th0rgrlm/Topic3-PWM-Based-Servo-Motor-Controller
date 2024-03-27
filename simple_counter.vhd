@@ -38,7 +38,7 @@ begin
                     sig_count <= (others => '0');
                     sig_pwm_out <= '1';
                 else
-                    if sig_count = POS - 1 then
+                    if sig_count >= POS - 1 then
                         sig_pwm_out <= '0';
                     end if;
                     sig_count <= sig_count + 1;
