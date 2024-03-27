@@ -32,11 +32,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity position is
-    Port ( BTNC : in STD_LOGIC;
-           BTNL : in STD_LOGIC;
-           BTNR : in STD_LOGIC;
-           pos : out STD_LOGIC_VECTOR (7 downto 0);
-           clk : in STD_LOGIC);
+    Port (  rst    : in STD_LOGIC;
+            left    : in STD_LOGIC;
+            right    : in STD_LOGIC;
+            pos     : out STD_LOGIC_VECTOR (7 downto 0);
+            clk     : in STD_LOGIC; --100MHz
+            en      : in STD_LOGIC; --20Hz
+            comp_en : in STD_LOGIC);--enable component
 end position;
 
 architecture Behavioral of position is
