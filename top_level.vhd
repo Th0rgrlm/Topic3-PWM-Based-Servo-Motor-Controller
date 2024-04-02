@@ -63,8 +63,9 @@ begin
             RATIO => 5)
         port map (
             clk => CLK100MHZ,
+            rst => '0',
             switch => SW,
-            pulse => CLK_20HZ
+            pulse => sig_en_position
         );
     
     clock_en : clock_enable
@@ -73,11 +74,12 @@ begin
         )
         port map (
             clk => sig_en_position,
+            rst => '0',
             pulse => sig_en_100k
         );
 
     GEN_SERVOS : 
-        for I in ServoCount - 1 downto 0 generate
+        for I in Servo_count - 1 downto 0 generate
             ServoX : single_servo_control
                 port map (
                     SW => SW_Servo(i),
