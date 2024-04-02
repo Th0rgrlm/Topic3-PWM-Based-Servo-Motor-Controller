@@ -11,24 +11,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity top_level is
+    Generic (Servo_count : integer := 2);
     Port ( BTNL : in STD_LOGIC;
            BTNR : in STD_LOGIC;
            BTNC : in STD_LOGIC;
            CLK100MHZ : in STD_LOGIC;
-           PWMOut : out STD_LOGIC);
+           SW : in STD_LOGIC;
+           SW_Servo : in STD_LOGIC_VECTOR (Servo_count - 1 downto 0);
+           PWMOut : out STD_LOGIC_VECTOR (Servo_count - 1 downto 0));
 end top_level;
 
 architecture Behavioral of top_level is
-component simple_counter is
-    generic (
-        N : integer := 9;
-        C_END : integer := 300
+component single_servo_control is
+    port (
+        SW : in STD_LOGIC;
+        BTNC : in STD_LOGIC;
+        BTNL : in STD_LOGIC;
+        BTNR : in STD_LOGIC;
+        CLK_20HZ : in STD_LOGIC;
+        CLK_100KHZ : in STD_LOGIC;
+        CLK100MHZ : in STD_LOGIC;
+        PWM : out STD_LOGIC
     );
-    Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           en : in STD_LOGIC;
-           POS : in STD_LOGIC_VECTOR(7 downto 0);
-           pwm_out : out STD_LOGIC);
 end component;
 
 component clock_enable is
@@ -39,11 +43,57 @@ component clock_enable is
            rst : in STD_LOGIC;
            pulse : out STD_LOGIC);
 end component;
+
+component clock_enable_ratio is
+    generic (
+        PERIOD : integer := 6;
+        RATIO : integer := 5
+    );
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           switch : in STD_LOGIC;
+           pulse : out STD_LOGIC);
+end component;
+
 signal sig_en_100k : STD_LOGIC;
 signal sig_en_position : STD_LOGIC;
-signal pwm : STD_LOGIC;
-signal sig_pos : STD_LOGIC_VECTOR (7 downto 0);
 begin
+    clock_en_ratio : clock_enable_ratio
+        generic map (PERIOD => 5_000_000,
+            RATIO => 5)
+        port map (
+            clk => CLK100MHZ,
+            switch => SW,
+            pulse => CLK_20HZ
+        );
+    
+    clock_en : clock_enable
+        generic map (
+            PERIOD => 100
+        )
+        port map (
+            clk => sig_en_position,
+            pulse => sig_en_100k
+        );
+
+    GEN_SERVOS : 
+        for I in ServoCount - 1 downto 0 generate
+            ServoX : single_servo_control
+                port map (
+                    SW => SW_Servo(i),
+                    BTNC => BTNC,
+                    BTNL => BTNL,
+                    BTNR => BTNR,
+                    CLK_20HZ => sig_en_position,
+                    CLK_100KHZ => sig_en_100k,
+                    CLK100MHZ => CLK100MHZ,
+                    PWM => PWMOut(i)
+                );
+        end generate GEN_SERVOS;
+
+
+
+
 
 
 end Behavioral;

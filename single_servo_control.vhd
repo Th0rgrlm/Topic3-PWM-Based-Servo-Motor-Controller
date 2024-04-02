@@ -50,10 +50,10 @@ pos: position
 pwm_gen: pwm_generator
     port map (
         clk => CLK100MHZ,
-        rst => '0'',
+        rst => '0',
         en => CLK_100KHZ,
         pos => sig_pos,
         pwm_out => PWM
     );
 
-end
+end;
