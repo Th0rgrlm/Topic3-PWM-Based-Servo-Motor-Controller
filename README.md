@@ -1,9 +1,13 @@
 # Topic3-PWM-Based-Servo-Motor-Controller
 
-Martin Garncarz is responsible for programming
-Matúš Citor is responsible for programming
-Kamil Soukup is responsible for help with programming and help with filming the short app video
+Martin Garncarz is responsible for programming\
+\
+Matúš Citor is responsible for programming\
+\
+Kamil Soukup is responsible for help with programming and help with filming the short app video\
+\
 Samuel Max Götzl is responsible for providing the servo, filming the short app video and help with programming
+
 
 ## Theoretical description and explanation
 
