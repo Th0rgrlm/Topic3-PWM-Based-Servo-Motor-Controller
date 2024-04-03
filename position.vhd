@@ -54,11 +54,13 @@ begin
             if rst = '1' then
                 sig_count <= b"1001_0110";
             elsif en = '1' then
-                if left ='1' and sig_count>=b"0110_0100" then
-                    sig_count <= sig_count - 1;
-                end if;
-                if right = '1' and sig_count<=b"1100_1000" then
-                    sig_count <= sig_count + 1;
+                if not (left = '1' and right = '1') then
+                    if left ='1' and sig_count > b"0110_0100" then
+                        sig_count <= sig_count - 1;
+                    end if;
+                    if right = '1' and sig_count < b"1100_1000" then
+                        sig_count <= sig_count + 1;
+                    end if;
                 end if;
             end if;
         end if;
