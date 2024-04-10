@@ -10,7 +10,7 @@ entity single_servo_control is
         CLK_20HZ : in STD_LOGIC;
         CLK_100KHZ : in STD_LOGIC;
         CLK100MHZ : in STD_LOGIC;
-        PWM : out STD_LOGIC
+        PWM : out STD_LOGIC := '0'
     );
 end entity;
 

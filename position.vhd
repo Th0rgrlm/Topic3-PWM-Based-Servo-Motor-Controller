@@ -37,7 +37,7 @@ entity position is
     Port (  rst    : in STD_LOGIC;
             left    : in STD_LOGIC;
             right    : in STD_LOGIC;
-            pos     : out STD_LOGIC_VECTOR (7 downto 0);
+            pos     : out STD_LOGIC_VECTOR (7 downto 0) := b"1001_0110";
             clk     : in STD_LOGIC; --100MHz
             en      : in STD_LOGIC; --20Hz
             comp_en : in STD_LOGIC);--enable component
@@ -45,21 +45,23 @@ end position;
 
 architecture Behavioral of position is
 
-signal sig_count : std_logic_vector(7 downto 0);
+signal sig_count : std_logic_vector(7 downto 0) := b"1001_0110";
 
 begin
     p_clk_enable : process (clk) is
     begin
         if (rising_edge(clk)) then
-            if rst = '1' then
-                sig_count <= b"1001_0110";
-            elsif en = '1' then
-                if not (left = '1' and right = '1') then
-                    if left ='1' and sig_count > b"0110_0100" then
-                        sig_count <= sig_count - 1;
-                    end if;
-                    if right = '1' and sig_count < b"1100_1000" then
-                        sig_count <= sig_count + 1;
+            if comp_en = '1' then
+                if rst = '1' then
+                    sig_count <= b"1001_0110";
+                elsif en = '1' then
+                    if not (left = '1' and right = '1') then
+                        if left ='1' and sig_count > b"0110_0100" then
+                            sig_count <= sig_count - 1;
+                        end if;
+                        if right = '1' and sig_count < b"1100_1000" then
+                            sig_count <= sig_count + 1;
+                        end if;
                     end if;
                 end if;
             end if;

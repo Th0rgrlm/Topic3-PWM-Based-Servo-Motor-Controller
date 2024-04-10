@@ -41,15 +41,15 @@ entity clock_enable_ratio is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            switch : in STD_LOGIC;
-           pulse : out STD_LOGIC);
+           pulse : out STD_LOGIC := '0');
 end clock_enable_ratio;
 
 
 
 architecture Behavioral of clock_enable_ratio is
-constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
+constant bits_needed : integer := integer(ceil(log2(real(PERIOD * RATIO + 1))));
 
-signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
+signal sig_count : std_logic_vector(bits_needed - 1 downto 0) := (others => '0');
 signal sig_period : integer;
 begin
     p_clk_enable : process (clk) is

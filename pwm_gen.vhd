@@ -20,11 +20,11 @@ entity pwm_generator is
            rst : in STD_LOGIC;
            en : in STD_LOGIC;
            POS : in STD_LOGIC_VECTOR(7 downto 0) := b"1001_0110";
-           pwm_out : out STD_LOGIC);
+           pwm_out : out STD_LOGIC := '1');
 end pwm_generator;
 
 architecture Behavioral of pwm_generator is
-signal sig_count: STD_LOGIC_VECTOR (N - 1 downto 0);
+signal sig_count: STD_LOGIC_VECTOR (N - 1 downto 0) := (others => '0');
 signal sig_pwm_out : STD_LOGIC := '1';
 begin
     

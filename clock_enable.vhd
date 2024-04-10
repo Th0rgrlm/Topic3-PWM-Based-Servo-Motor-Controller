@@ -39,7 +39,7 @@ entity clock_enable is
     );
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           pulse : out STD_LOGIC);
+           pulse : out STD_LOGIC := '0');
 end clock_enable;
 
 
@@ -47,7 +47,7 @@ end clock_enable;
 architecture Behavioral of clock_enable is
 constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
 
-signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
+signal sig_count : std_logic_vector(bits_needed - 1 downto 0) := (others => '0');
 begin
     p_clk_enable : process (clk) is
     begin

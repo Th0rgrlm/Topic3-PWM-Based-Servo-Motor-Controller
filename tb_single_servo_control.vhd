@@ -45,15 +45,14 @@ architecture tb of tb_single_servo_control is
     signal BTNC       : std_logic;
     signal BTNL       : std_logic;
     signal BTNR       : std_logic;
-    signal CLK_20HZ   : std_logic;
-    signal CLK_100KHZ : std_logic;
-    signal CLK100MHZ  : std_logic;
+    signal CLK_20HZ   : std_logic := '0';
+    signal CLK_100KHZ : std_logic := '0';
+    signal CLK100MHZ  : std_logic := '0';
     signal PWM        : std_logic;
     signal SWPeriod   : std_logic;
 
     constant TbPeriod : time := 10 ns; -- EDIT Put right period here
     signal TbClock : std_logic := '0';
-    signal TbClock20 : std_logic := '0';
     signal TbClock100k : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
@@ -74,8 +73,8 @@ begin
     port map (
         clk => CLK100MHZ,
         rst => BTNC,
-        pulse => TbClock100k
-    );
+        pulse => open --Cannot use proper signal, otherwise simulation length needed would be 8 s, which means 30 mins of simulating
+    ); -- CLK_100KHZ
     
     clock_en_ratio : clock_enable_ratio
     generic map (PERIOD => 5_000,
@@ -84,14 +83,12 @@ begin
         clk => CLK100MHZ,
         rst => BTNC,
         switch => SWPeriod,
-        pulse => TbClock20);
+        pulse => CLK_20HZ);
 
     -- Clock generation
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
     
     CLK100MHZ <= TbClock;
-    CLK_100KHZ <= TbClock100k;
-    CLK_20HZ <= TbClock20;
 
     stimuli : process
     begin
@@ -103,7 +100,6 @@ begin
         SWPeriod <= '0';
 
         -- Reset generation
-        --  EDIT: Replace YOURRESETSIGNAL below by the name of your reset as I haven't guessed it
         BTNC <= '1';
         wait for 100 us;
         BTNC <= '0';
@@ -114,10 +110,13 @@ begin
         BTNC <= '1';
         wait for 100 us;
         BTNC <= '0';
+        wait for 200 us;
         SW <= '0';
+        wait for 200 us;
         BTNR <= '1';
-        wait for 500 us;
+        wait for 200 us;
         SW <= '1';
+        wait for 400 us;
         BTNL <= '0';
         wait for 1000 us;
         SWPeriod <= '1';
