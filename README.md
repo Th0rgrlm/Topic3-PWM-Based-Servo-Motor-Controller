@@ -1,8 +1,11 @@
 # Topic3-PWM-Based-Servo-Motor-Controller
 
-Martin Garncarz is responsible for programming
-Matúš Citor is responsible for programming
-Kamil Soukup is responsible for help with programming and help with filming the short app video
+Martin Garncarz is responsible for programming\
+\
+Matúš Citor is responsible for programming\
+\
+Kamil Soukup is responsible for help with programming and help with filming the short app video\
+\
 Samuel Max Götzl is responsible for providing the servo, filming the short app video and help with programming
 
 ## Theoretical description and explanation
@@ -18,5 +21,10 @@ Servo link: https://www.peckamodel.cz/savox-sb2292sg-sb-2292sg-brushless-hivolt-
 
 
 ### Component(s) simulation
+Simulations of unknown components.
 
 ## Instructions
+On FPGA are used buttons BTNR, BTNL and BTNC. BNTR and BTNL are used to change duty of PWM signal and BTNC is used as center button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
+Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, and the last one to the left (SW15) is set to switch between fine and gross regulation of duty.\
+To connect servos is used Pmod ports of FPGA marked as JA, specifically JA1 and JA7 as PWM output (see picture bellow)\
+<img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> \
