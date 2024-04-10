@@ -18,6 +18,9 @@ entity top_level is
            CLK100MHZ : in STD_LOGIC;
            SW : in STD_LOGIC;
            SW_Servo : in STD_LOGIC_VECTOR (Servo_count - 1 downto 0);
+           LED : out STD_LOGIC_VECTOR (Servo_count - 1 downto 0);
+           LED16_G : out STD_LOGIC;
+           LED16_R : out STD_LOGIC;
            PWMOut : out STD_LOGIC_VECTOR (Servo_count - 1 downto 0));
 end top_level;
 
@@ -59,7 +62,7 @@ signal sig_en_100k : STD_LOGIC;
 signal sig_en_position : STD_LOGIC;
 begin
     clock_en_ratio : clock_enable_ratio
-        generic map (PERIOD => 5_000_000,
+        generic map (PERIOD => 1_000_000,
             RATIO => 5)
         port map (
             clk => CLK100MHZ,
@@ -70,10 +73,10 @@ begin
     
     clock_en : clock_enable
         generic map (
-            PERIOD => 100
+            PERIOD => 1000
         )
         port map (
-            clk => sig_en_position,
+            clk => CLK100MHZ,
             rst => '0',
             pulse => sig_en_100k
         );
@@ -93,8 +96,10 @@ begin
                 );
         end generate GEN_SERVOS;
 
-
-
+    LED <= SW_Servo;
+    LED16_R <= '1' when SW = '0' else '0';
+    LED16_G <= '1' when SW = '1' else '0';
+    
 
 
 
