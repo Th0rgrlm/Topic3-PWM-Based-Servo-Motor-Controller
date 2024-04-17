@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd" \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd" \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd" \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd" \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd" \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/tb_single_servo_control.vhd" \
+
+# Do not sort compile order
+nosort

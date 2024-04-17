@@ -1,0 +1,290 @@
+
+*** Running vivado
+    with args -log top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source top_level.tcl -notrace
+Command: synth_design -top top_level -part xc7a50ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1092
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_level' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:36]
+	Parameter PERIOD bound to: 1000000 - type: integer 
+	Parameter RATIO bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'clock_enable_ratio' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd:36' bound to instance 'clock_en_ratio' of component 'clock_enable_ratio' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'clock_enable_ratio' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd:49]
+	Parameter PERIOD bound to: 1000000 - type: integer 
+	Parameter RATIO bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_enable_ratio' (1#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd:49]
+	Parameter PERIOD bound to: 1000 - type: integer 
+INFO: [Synth 8-3491] module 'clock_enable' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:36' bound to instance 'clock_en' of component 'clock_enable' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:118]
+INFO: [Synth 8-638] synthesizing module 'clock_enable' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:47]
+	Parameter PERIOD bound to: 1000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_enable' (2#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:47]
+	Parameter PERIOD bound to: 200000 - type: integer 
+INFO: [Synth 8-3491] module 'clock_enable' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:36' bound to instance 'clock_en_segm' of component 'clock_enable' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'clock_enable__parameterized1' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:47]
+	Parameter PERIOD bound to: 200000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_enable__parameterized1' (2#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd:47]
+INFO: [Synth 8-3491] module 'segm_control' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/segm_control.vhd:34' bound to instance 'segment_control' of component 'segm_control' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'segm_control' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/segm_control.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'segm_control' (3#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/segm_control.vhd:59]
+INFO: [Synth 8-3491] module 'single_servo_control' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:5' bound to instance 'Servo0' of component 'single_servo_control' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'single_servo_control' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:22]
+INFO: [Synth 8-3491] module 'position' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd:36' bound to instance 'pos' of component 'position' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'position' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'position' (4#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd:46]
+INFO: [Synth 8-3491] module 'pwm_generator' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd:14' bound to instance 'pwm_gen' of component 'pwm_generator' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'pwm_generator' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd:26]
+	Parameter N bound to: 9 - type: integer 
+	Parameter C_END bound to: 300 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'pwm_generator' (5#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd:26]
+INFO: [Synth 8-3491] module 'bin2bcd' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd:35' bound to instance 'bin_to_bcd' of component 'bin2bcd' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'bin2bcd' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd:41]
+WARNING: [Synth 8-614] signal 'conversion' is read in the process but is not in the sensitivity list [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'bin2bcd' (6#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd:41]
+INFO: [Synth 8-3491] module 'bin2seg' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:34' bound to instance 'seg_bcd1' of component 'bin2seg' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'bin2seg' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:40]
+INFO: [Synth 8-226] default block is never used [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'bin2seg' (7#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:40]
+INFO: [Synth 8-3491] module 'bin2seg' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:34' bound to instance 'seg_bcd10' of component 'bin2seg' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:88]
+INFO: [Synth 8-3491] module 'bin2seg' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd:34' bound to instance 'seg_bcd100' of component 'bin2seg' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:92]
+INFO: [Synth 8-256] done synthesizing module 'single_servo_control' (8#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:22]
+INFO: [Synth 8-3491] module 'single_servo_control' declared at 'C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd:5' bound to instance 'Servo1' of component 'single_servo_control' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:173]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (9#1) [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd:36]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 999.902 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/246815/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc]
+Finished Parsing XDC File [C:/Users/246815/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/246815/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.902 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bin2bcd'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   start |                               00 |                               00
+                   shift |                               01 |                               01
+                    done |                               10 |                               11
+                   check |                               11 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bin2bcd'
+WARNING: [Synth 8-327] inferring latch for variable 'conversion_next_reg' [C:/Users/246815/Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd:65]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   31 Bit       Adders := 2     
+	   2 Input   25 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 6     
++---Registers : 
+	               31 Bit    Registers := 2     
+	               20 Bit    Registers := 2     
+	               12 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   4 Input   31 Bit        Muxes := 2     
+	   2 Input   25 Bit        Muxes := 1     
+	   4 Input   20 Bit        Muxes := 4     
+	  17 Input    7 Bit        Muxes := 6     
+	   2 Input    4 Bit        Muxes := 6     
+	   8 Input    3 Bit        Muxes := 7     
+	   2 Input    2 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 20    
+	   8 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 999.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 999.984 ; gain = 0.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    37|
+|3     |LUT1   |    14|
+|4     |LUT2   |    90|
+|5     |LUT3   |    14|
+|6     |LUT4   |    45|
+|7     |LUT5   |    79|
+|8     |LUT6   |   105|
+|9     |FDRE   |   228|
+|10    |FDSE   |    17|
+|11    |IBUF   |     8|
+|12    |OBUF   |    22|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1015.812 ; gain = 15.910
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1015.812 ; gain = 15.910
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1027.836 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1027.836 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+50 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1027.836 ; gain = 27.934
+INFO: [Common 17-1381] The checkpoint 'C:/Users/246815/servo_controller/servo_controller.runs/synth_1/top_level.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 17 13:40:29 2024...

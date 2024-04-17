@@ -1,0 +1,22 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/appz/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto e42908fc70e14cf4b1a5cbc0a148279e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cfg_tb_single_servo_control_behav xil_defaultlib.cfg_tb_single_servo_control -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.position [position_default]
+Compiling architecture behavioral of entity xil_defaultlib.pwm_generator [pwm_generator_default]
+Compiling architecture behavioral of entity xil_defaultlib.single_servo_control [single_servo_control_default]
+Compiling architecture behavioral of entity xil_defaultlib.clock_enable [\clock_enable(period=1000)\]
+Compiling architecture behavioral of entity xil_defaultlib.clock_enable_ratio [\clock_enable_ratio(period=5000)...]
+Compiling architecture tb of entity xil_defaultlib.tb_single_servo_control [tb_single_servo_control]
+Built simulation snapshot cfg_tb_single_servo_control_behav

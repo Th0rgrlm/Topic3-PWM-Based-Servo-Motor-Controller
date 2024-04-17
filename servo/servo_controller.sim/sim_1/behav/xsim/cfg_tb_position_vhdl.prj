@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../Documents/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd" \
+"../../../../servo_controller.srcs/sim_1/new/tb_position.vhd" \
+
+# Do not sort compile order
+nosort
