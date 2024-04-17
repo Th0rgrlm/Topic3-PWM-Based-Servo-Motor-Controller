@@ -18,7 +18,7 @@ Servo link: https://www.peckamodel.cz/savox-sb2292sg-sb-2292sg-brushless-hivolt-
 
 
 ## Software description
-
+<img src="http://3eb24.xf.cz/stranka/img/DE1_projekt_v1.png" alt="Block scheme of TOP LEVEL" />
 
 ### Component(s) simulation
 Simulations of unknown components.
@@ -27,4 +27,4 @@ Simulations of unknown components.
 On FPGA are used buttons BTNR, BTNL and BTNC. BNTR and BTNL are used to change duty of PWM signal and BTNC is used as center button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
 Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, and the last one to the left (SW15) is set to switch between fine and gross regulation of duty.\
 To connect servos is used Pmod ports of FPGA marked as JA, specifically JA1 and JA7 as PWM output (see picture bellow)\
-<img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> \
+<img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> 
