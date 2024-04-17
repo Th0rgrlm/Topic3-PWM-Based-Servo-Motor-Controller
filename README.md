@@ -20,6 +20,8 @@ Servo link: https://www.peckamodel.cz/savox-sb2292sg-sb-2292sg-brushless-hivolt-
 ## Software description
 <img src="http://3eb24.xf.cz/stranka/img/DE1_projekt_v1.png" alt="Block scheme of TOP LEVEL" />
 
+
+
 ### Component(s) simulation
 Simulations of unknown components.
 
