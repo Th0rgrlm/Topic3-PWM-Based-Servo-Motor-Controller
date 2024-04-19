@@ -11,14 +11,18 @@ end tb_single_servo_control;
 architecture tb of tb_single_servo_control is
 
     component single_servo_control
-        port (SW         : in std_logic;
+        port (EN         : in std_logic;
               BTNC       : in std_logic;
               BTNL       : in std_logic;
               BTNR       : in std_logic;
-              CLK_20HZ   : in std_logic;
-              CLK_100KHZ : in std_logic;
-              CLK100MHZ  : in std_logic;
-              PWM        : out std_logic);
+              CLK_POS   : in std_logic;
+              CLK_PWM_COUNTER : in std_logic;
+              CLK  : in std_logic;
+              PWM        : out std_logic;
+              RST : in STD_LOGIC;
+              SEG1 : out STD_LOGIC_VECTOR (6 downto 0);
+              SEG10 : out STD_LOGIC_VECTOR (6 downto 0);
+              SEG100 : out STD_LOGIC_VECTOR (6 downto 0));
     end component;
     
     component clock_enable_ratio
@@ -45,37 +49,44 @@ architecture tb of tb_single_servo_control is
     signal BTNC       : std_logic;
     signal BTNL       : std_logic;
     signal BTNR       : std_logic;
-    signal CLK_20HZ   : std_logic;
-    signal CLK_100KHZ : std_logic;
-    signal CLK100MHZ  : std_logic;
+    signal CLK_POS   : std_logic := '0';
+    signal CLK_PWM_COUNTER : std_logic := '0';
+    signal CLK100MHZ  : std_logic := '0';
     signal PWM        : std_logic;
     signal SWPeriod   : std_logic;
+    signal RST        : std_logic;
+    signal SEG1       : std_logic_vector (6 downto 0);
+    signal SEG10      : std_logic_vector (6 downto 0);
+    signal SEG100     : std_logic_vector (6 downto 0);
 
     constant TbPeriod : time := 10 ns; -- EDIT Put right period here
     signal TbClock : std_logic := '0';
-    signal TbClock20 : std_logic := '0';
     signal TbClock100k : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
 begin
 
     dut : single_servo_control
-    port map (SW         => SW,
+    port map (EN         => SW,
               BTNC       => BTNC,
               BTNL       => BTNL,
               BTNR       => BTNR,
-              CLK_20HZ   => CLK_20HZ,
-              CLK_100KHZ => '1',
-              CLK100MHZ  => CLK100MHZ,
-              PWM        => PWM);
+              CLK_POS   => CLK_POS,
+              CLK_PWM_COUNTER => '1',
+              CLK  => CLK100MHZ,
+              PWM        => PWM,
+              SEG1 => SEG1,
+              SEG10 => SEG10,
+              SEG100 => SEG100,
+              RST => RST);
               
     clock_en : clock_enable
     generic map (PERIOD => 1000)
     port map (
         clk => CLK100MHZ,
         rst => BTNC,
-        pulse => TbClock100k
-    );
+        pulse => open --Cannot use proper signal, otherwise simulation length needed would be 8 s, which means 30 mins of simulating
+    ); -- CLK_PWM_COUNTER
     
     clock_en_ratio : clock_enable_ratio
     generic map (PERIOD => 5_000,
@@ -84,14 +95,12 @@ begin
         clk => CLK100MHZ,
         rst => BTNC,
         switch => SWPeriod,
-        pulse => TbClock20);
+        pulse => CLK_POS);
 
     -- Clock generation
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
     
     CLK100MHZ <= TbClock;
-    CLK_100KHZ <= TbClock100k;
-    CLK_20HZ <= TbClock20;
 
     stimuli : process
     begin
@@ -103,10 +112,11 @@ begin
         SWPeriod <= '0';
 
         -- Reset generation
-        --  EDIT: Replace YOURRESETSIGNAL below by the name of your reset as I haven't guessed it
         BTNC <= '1';
+        RST <= '1';
         wait for 100 us;
         BTNC <= '0';
+        RST <= '0';
         SW <= '1';
         wait for 100 us;
         BTNL <= '1';
@@ -114,10 +124,13 @@ begin
         BTNC <= '1';
         wait for 100 us;
         BTNC <= '0';
+        wait for 200 us;
         SW <= '0';
+        wait for 200 us;
         BTNR <= '1';
-        wait for 500 us;
+        wait for 200 us;
         SW <= '1';
+        wait for 400 us;
         BTNL <= '0';
         wait for 1000 us;
         SWPeriod <= '1';

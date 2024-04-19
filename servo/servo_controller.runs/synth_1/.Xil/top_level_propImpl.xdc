@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/246815/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc rfile:../../../servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc rfile:../../../servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK100MHZ }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]

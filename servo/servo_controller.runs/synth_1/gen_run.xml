@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50ticsg324-1L" LaunchTime="1713353993">
+<GenRun Id="synth_1" LaunchPart="xc7a50ticsg324-1L" LaunchTime="1713451405">
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
@@ -11,55 +11,55 @@
   <File Type="VDS-TIMING-PB" Name="top_level_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2bcd.vhd">
+    <File Path="$PSRCDIR/sources_1/new/bin2bcd.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/bin2seg.vhd">
+    <File Path="$PSRCDIR/sources_1/new/bin2seg.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd">
+    <File Path="$PSRCDIR/sources_1/new/clock_enable.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd">
+    <File Path="$PSRCDIR/sources_1/new/clock_enable_ratio.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd">
+    <File Path="$PSRCDIR/sources_1/new/position.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd">
+    <File Path="$PSRCDIR/sources_1/new/pwm_gen.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/segm_control.vhd">
+    <File Path="$PSRCDIR/sources_1/new/segm_control.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd">
+    <File Path="$PSRCDIR/sources_1/new/single_servo_control.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Documents/ProjectV2/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd">
+    <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -90,7 +90,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

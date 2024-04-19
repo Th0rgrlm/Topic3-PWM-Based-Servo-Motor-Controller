@@ -2,12 +2,5 @@
 2020.2
 Nov 18 2020
 09:47:47
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable.vhd,1712746642,vhdl,,,,clock_enable,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/clock_enable_ratio.vhd,1712746642,vhdl,,,,clock_enable_ratio,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/position.vhd,1712746642,vhdl,,,,position,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/pwm_gen.vhd,1712746642,vhdl,,,,pwm_generator,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/single_servo_control.vhd,1712746642,vhdl,,,,single_servo_control,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/tb_single_servo_control.vhd,1712746642,vhdl,,,,cfg_tb_single_servo_control;tb_single_servo_control,,,,,,,,
-C:/Users/246815/Documents/Topic3-PWM-Based-Servo-Motor-Controller/top_level.vhd,1712142680,vhdl,,,,top_level,,,,,,,,
-C:/Users/246815/servo_controller/servo_controller.srcs/sim_1/new/tb_position.vhd,1712145998,vhdl,,,,cfg_tb_position;tb_position,,,,,,,,
-C:/Users/246815/servo_controller/servo_controller.srcs/sim_1/new/tb_pwm_generator.vhd,1712144435,vhdl,,,,cfg_tb_pwm_generator;tb_pwm_generator,,,,,,,,
+C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sim_1/new/tb_bin2bcd.vhd,1713282736,vhdl,,,,cfg_tb_bin2bcd;tb_bin2bcd,,,,,,,,
+C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/bin2bcd.vhd,1713351614,vhdl,,,,bin2bcd,,,,,,,,
