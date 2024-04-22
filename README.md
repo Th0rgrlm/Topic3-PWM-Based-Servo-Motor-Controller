@@ -17,7 +17,7 @@ Our group decided to make a PWM-Based Servo Motor Controller code. We want to cr
 
 
 ## Hardware description of demo application
-Servo link: https://www.peckamodel.cz/savox-sb2292sg-sb-2292sg-brushless-hivolt-digitalni-servo-45kg-0-055s-60
+Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-voltage
 
 
 ## Software description
