@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.runs/synth_1'
+HD_PWD='C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

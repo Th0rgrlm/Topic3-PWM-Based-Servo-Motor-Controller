@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.runs/synth_1/top_level.tcl"
+  variable script "C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.runs/synth_1/top_level.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,25 +76,25 @@ create_project -in_memory -part xc7a50ticsg324-1L
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.cache/wt [current_project]
-set_property parent.project_path C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.cache/wt [current_project]
+set_property parent.project_path C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys-a7-50t:part0:1.3 [current_project]
-set_property ip_output_repo c:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.cache/ip [current_project]
+set_property ip_output_repo c:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/bin2bcd.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/bin2seg.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/clock_enable.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/clock_enable_ratio.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/position.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/pwm_gen.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/segm_control.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/single_servo_control.vhd
-  C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/sources_1/new/top_level.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/bin2bcd.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/bin2seg.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/clock_enable.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/clock_enable_ratio.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/position.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/pwm_gen.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/segm_control.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/single_servo_control.vhd
+  C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/sources_1/new/top_level.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -105,8 +105,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc
-set_property used_in_implementation false [get_files C:/Users/mgaho/Vivado/PC1/servo_controller/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc]
+read_xdc C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc
+set_property used_in_implementation false [get_files C:/Users/mgaho/Vivado/Project/Topic3-PWM-Based-Servo-Motor-Controller/servo/servo_controller.srcs/constrs_1/new/nexys-a7-50t.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
