@@ -17,6 +17,11 @@ Our group decided to make a PWM-Based Servo Motor Controller code. We want to cr
 
 
 ## Hardware description of demo application
+On FPGA are used buttons BTNR, BTNL and BTNC. BNTR and BTNL are used to change duty of PWM signal and BTNC is used as center button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
+Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, and the last one to the left (SW15) is set to switch between fine and rough regulation of duty.\
+To connect servos is used Pmod ports of FPGA marked as JA, specifically JA7 and JA8 as PWM output (see picture bellow)\
+<img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> 
+
 Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-voltage
 
 
@@ -29,7 +34,12 @@ Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-
 Simulations of unknown components.
 
 ## Instructions
-On FPGA are used buttons BTNR, BTNL and BTNC. BNTR and BTNL are used to change duty of PWM signal and BTNC is used as center button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
-Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, and the last one to the left (SW15) is set to switch between fine and gross regulation of duty.\
-To connect servos is used Pmod ports of FPGA marked as JA, specifically JA7 and JA8 as PWM output (see picture bellow)\
-<img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> 
+Press the left or right button (BTNL/BTNR) to move the servo in the chosen orientation, in the total range of 100 degrees from left to right. The actual position will be displayed on the 7-segment displays in degrees (0-100).
+Use the switch most to the left (SW15) to switch between fine and rough movement of the two servos, technically between slow and fast movement.
+Use the two switches most to the right (SW0, SW1) to activate/deactivate the two connected servos. If only SW0 is turned on, only the right servo will be working and vice versa.
+Press the middle button (BTNC) to reset the position of the servos to the middle position (50 degrees).
+Press the lower button (BTND) to shut down the whole system. As long as this button is pressed, the servos, displays and LED diodes will be turned off.
+
+![Obrázek WhatsApp, 2024-04-23 v 13 00 37_1fac29c2](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/assets/165166430/d140e269-9278-4bd4-affe-fb9430dfcc7a)
+
+
