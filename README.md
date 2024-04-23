@@ -56,5 +56,6 @@ Press the middle button (BTNC) to reset the position of the servos to the middle
 Use the switch most to the left (SW15) to switch between fine and rough movement of the two servos, technically between slow and fast movement.\
 \
 \
-![Obrázek WhatsApp, 2024-04-23 v 13 15 50_bca827d0](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/assets/165166430/cf8040e7-dc8a-4883-90bc-5d10b3e4df54)
-Press the lower button (BTND) to shut down the whole system. As long as this button is pressed, the servos, displays and LED diodes will be turned off.\
+![Obrázek WhatsApp, 2024-04-23 v 13 15 50_bca827d0](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/assets/165166430/cf8040e7-dc8a-4883-90bc-5d10b3e4df54)\
+\
+Press the lower button (BTND) to shut down the whole system. As long as this button is pressed, the servos, displays and LED diodes will be turned off.
