@@ -24,13 +24,15 @@ use ieee.math_real.all;
 use ieee.std_logic_unsigned.all;
 
 entity position is
-    Port (  rst    : in STD_LOGIC; -- reset signal
-            left    : in STD_LOGIC; -- position decrement
-            right    : in STD_LOGIC; -- position increment
-            pos     : out STD_LOGIC_VECTOR (7 downto 0); -- output position vector
-            clk     : in STD_LOGIC; -- main clock signal
-            en      : in STD_LOGIC; -- enable reading signal
-            comp_en : in STD_LOGIC); -- component enable signal
+    Port (  
+        rst     : in STD_LOGIC; -- reset signal
+        left    : in STD_LOGIC; -- position decrement
+        right   : in STD_LOGIC; -- position increment
+        clk     : in STD_LOGIC; -- main clock signal
+        en      : in STD_LOGIC; -- enable reading signal
+        comp_en : in STD_LOGIC; -- component enable signal
+        pos     : out STD_LOGIC_VECTOR (7 downto 0) -- output position vector
+    );
 end position;
 
 architecture Behavioral of position is

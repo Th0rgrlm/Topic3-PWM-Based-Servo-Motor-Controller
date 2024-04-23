@@ -23,34 +23,34 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity segm_control is
     Port (
-       CA : out STD_LOGIC; -- Cathodes
-       CB : out STD_LOGIC;
-       CC : out STD_LOGIC;
-       CD : out STD_LOGIC;
-       CE : out STD_LOGIC;
-       CF : out STD_LOGIC;
-       CG : out STD_LOGIC;
-       
-       DP : out STD_LOGIC; -- Decimal point
-       AN : out STD_LOGIC_VECTOR (7 downto 0); -- Anodes
-       
-       SEGM1 : in STD_LOGIC_VECTOR (6 downto 0); -- Input segment values CG, CF, CE, CD, CC, CB, CA
-       SEGM2 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM3 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM4 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM5 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM6 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM7 : in STD_LOGIC_VECTOR (6 downto 0);
-       SEGM8 : in STD_LOGIC_VECTOR (6 downto 0);
-       
-       CLK : in STD_LOGIC; -- main clock signal
-       RST : in STD_LOGIC; -- reset signal
-       EN : in STD_LOGIC -- enable component signal
-       );
+        CLK      : in STD_LOGIC; -- main clock signal
+        RST      : in STD_LOGIC; -- reset signal
+        EN       : in STD_LOGIC; -- enable component signal
+
+        SEGM1    : in STD_LOGIC_VECTOR (6 downto 0); -- Input segment values CG, CF, CE, CD, CC, CB, CA
+        SEGM2    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM3    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM4    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM5    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM6    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM7    : in STD_LOGIC_VECTOR (6 downto 0);
+        SEGM8    : in STD_LOGIC_VECTOR (6 downto 0);
+
+        CA       : out STD_LOGIC; -- Cathodes
+        CB       : out STD_LOGIC;
+        CC       : out STD_LOGIC;
+        CD       : out STD_LOGIC;
+        CE       : out STD_LOGIC;
+        CF       : out STD_LOGIC;
+        CG       : out STD_LOGIC;
+        DP       : out STD_LOGIC; -- Decimal point
+
+        AN       : out STD_LOGIC_VECTOR (7 downto 0) -- Anodes
+    );
 end segm_control;
 
 architecture Behavioral of segm_control is
-    signal sig_an : std_logic_vector (7 downto 0);
+    signal sig_an : std_logic_vector (7 downto 0); -- internal anodes signal
 begin
     process (CLK)
         variable last : STD_LOGIC;
@@ -71,8 +71,9 @@ begin
           SEGM4(6) when sig_an = b"1111_0111" else
           SEGM5(6) when sig_an = b"1110_1111" else
           SEGM6(6) when sig_an = b"1101_1111" else
-         SEGM7(6) when sig_an = b"1011_1111" else
+          SEGM7(6) when sig_an = b"1011_1111" else
           SEGM8(6);
+
     CB <= SEGM1(5) when sig_an = b"1111_1110" else
           SEGM2(5) when sig_an = b"1111_1101" else
           SEGM3(5) when sig_an = b"1111_1011" else
@@ -81,6 +82,7 @@ begin
           SEGM6(5) when sig_an = b"1101_1111" else
           SEGM7(5) when sig_an = b"1011_1111" else
           SEGM8(5);
+
     CC <= SEGM1(4) when sig_an = b"1111_1110" else
           SEGM2(4) when sig_an = b"1111_1101" else
           SEGM3(4) when sig_an = b"1111_1011" else
@@ -89,6 +91,7 @@ begin
           SEGM6(4) when sig_an = b"1101_1111" else
           SEGM7(4) when sig_an = b"1011_1111" else
           SEGM8(4);
+
     CD <= SEGM1(3) when sig_an = b"1111_1110" else
           SEGM2(3) when sig_an = b"1111_1101" else
           SEGM3(3) when sig_an = b"1111_1011" else
@@ -97,6 +100,7 @@ begin
           SEGM6(3) when sig_an = b"1101_1111" else
           SEGM7(3) when sig_an = b"1011_1111" else
           SEGM8(3);
+
     CE <= SEGM1(2) when sig_an = b"1111_1110" else
           SEGM2(2) when sig_an = b"1111_1101" else
           SEGM3(2) when sig_an = b"1111_1011" else
@@ -105,6 +109,7 @@ begin
           SEGM6(2) when sig_an = b"1101_1111" else
           SEGM7(2) when sig_an = b"1011_1111" else
           SEGM8(2);
+
     CF <= SEGM1(1) when sig_an = b"1111_1110" else
           SEGM2(1) when sig_an = b"1111_1101" else
           SEGM3(1) when sig_an = b"1111_1011" else
@@ -113,6 +118,7 @@ begin
           SEGM6(1) when sig_an = b"1101_1111" else
           SEGM7(1) when sig_an = b"1011_1111" else
           SEGM8(1);
+
     CG <= SEGM1(0) when sig_an = b"1111_1110" else
           SEGM2(0) when sig_an = b"1111_1101" else
           SEGM3(0) when sig_an = b"1111_1011" else

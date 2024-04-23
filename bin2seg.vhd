@@ -23,9 +23,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity bin2seg is
     Port ( 
-        clear : in STD_LOGIC; -- turns off the display
-        bin : in STD_LOGIC_VECTOR (3 downto 0); -- binary input value
-        seg : out STD_LOGIC_VECTOR (6 downto 0) -- segments values signal
+        clear   : in STD_LOGIC; -- turns off the display
+        bin     : in STD_LOGIC_VECTOR (3 downto 0); -- binary input value
+        seg     : out STD_LOGIC_VECTOR (6 downto 0) -- segments values signal
     );
 end bin2seg;
 

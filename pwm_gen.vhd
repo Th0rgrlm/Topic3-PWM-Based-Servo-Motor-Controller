@@ -25,22 +25,22 @@ use IEEE.std_logic_unsigned.ALL;
 
 entity pwm_generator is
     generic (
-        C_END : integer := 300 -- End of the counter
+        C_END   : integer := 300 -- End of the counter
     );
     Port ( 
-        clk : in STD_LOGIC; -- main clock
-        rst : in STD_LOGIC; -- reset
-        en : in STD_LOGIC; -- component enable signal
-        POS : in STD_LOGIC_VECTOR(7 downto 0); -- position parameter defining HL position
+        clk     : in STD_LOGIC; -- main clock
+        rst     : in STD_LOGIC; -- reset
+        en      : in STD_LOGIC; -- component enable signal
+        POS     : in STD_LOGIC_VECTOR(7 downto 0); -- position parameter defining HL position
         pwm_out : out STD_LOGIC -- PWM output signal
     );
 end pwm_generator;
 
 architecture Behavioral of pwm_generator is
-    constant N : integer := integer(ceil(log2(real(C_END + 1)))); -- number of bits needed
+    constant N          : integer := integer(ceil(log2(real(C_END + 1)))); -- number of bits needed
 
-    signal sig_count: STD_LOGIC_VECTOR (N - 1 downto 0) := (others => '0'); -- internal counter value
-    signal sig_pwm_out : STD_LOGIC := '1'; -- internal PWM signal
+    signal sig_count    : STD_LOGIC_VECTOR (N - 1 downto 0) := (others => '0'); -- internal counter value
+    signal sig_pwm_out  : STD_LOGIC := '1'; -- internal PWM signal
 begin
     process (clk)
     begin
