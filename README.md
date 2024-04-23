@@ -29,7 +29,7 @@ Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-
 
 
 ### Component(s) simulation
-# Enable Clock Ratio
+#### Enable Clock Ratio
 <img src="https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/images/Simulation/enable_clock_ratio.png" alt="Clock enable ratio Test Bench" /> 
 In single component enable_clock_ratio we use switch to change pulse timing of enable signal that will go to the component Position.
 
