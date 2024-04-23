@@ -26,7 +26,7 @@ Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-
 
 
 ## Software description
-<img src="http://3eb24.xf.cz/stranka/img/DE1_projekt_v1.png" alt="Block scheme of TOP LEVEL" />
+![image](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/assets/165166430/66bb456e-519e-44ec-b807-227459f0e49d)
 
 
 
