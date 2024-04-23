@@ -17,9 +17,9 @@ Our group decided to make a PWM-Based Servo Motor Controller code. We want to cr
 
 
 ## Hardware description of demo application
-On FPGA are used buttons BTNR, BTNL and BTNC. BNTR and BTNL are used to change duty of PWM signal and BTNC is used as center button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
-Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, and the last one to the left (SW15) is set to switch between fine and rough regulation of duty.\
-To connect servos is used Pmod ports of FPGA marked as JA, specifically JA7 and JA8 as PWM output (see picture bellow)\
+On the FPGA board there are BTNR, BTNL, BTND and BTNC buttons used. BNTR and BTNL are used to change duty of PWM signal, BTND button is used to shut the system down while it is being pressed and BTNC is used as center (reset) button. This button resets settings of PWM signal and duty is defaultly on 50 %. \
+Next in use are switches SW0, SW1 and SW15. First two are meant to switch between up to two servos, depending on which of the switches is turned on, the chosen servo will be moving, and the last one to the left (SW15) is set to switch between fine and rough regulation of duty.\
+Pmod ports of the FPGA marked as JA are used to connect the servos, specifically JA7 and JA8 as PWM output (see picture bellow)\
 <img src="https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4v.png?w=350&tok=bafdbd" alt="Pmod out picture" /> 
 
 Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-voltage
