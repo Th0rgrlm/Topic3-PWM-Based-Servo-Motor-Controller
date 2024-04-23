@@ -58,4 +58,7 @@ Use the switch most to the left (SW15) to switch between fine and rough movement
 \
 ![imageBTND](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/images/btnd.jpg)\
 \
-Press the lower button (BTND) to shut down the whole system. As long as this button is pressed, the servos, displays and LED diodes will be turned off.
+Press the lower button (BTND) to shut down the whole system. As long as this button is pressed, the servos, displays and LED diodes will be turned off.\
+\
+short app video:\
+https://youtu.be/wzy_NoTWGlA?si=6DzQUGHOYftg_hcf
