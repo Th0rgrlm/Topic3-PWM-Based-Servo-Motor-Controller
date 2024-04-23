@@ -12,7 +12,6 @@ architecture tb of tb_pwm_generator is
 
     component pwm_generator
         generic (
-            N : integer := 9;
             C_END : integer := 300
         );
         port (clk     : in std_logic;
@@ -36,7 +35,6 @@ begin
 
     dut : pwm_generator
     generic map (
-        N => 4,
         C_END => 12)
     port map (clk     => clk,
               rst     => rst,

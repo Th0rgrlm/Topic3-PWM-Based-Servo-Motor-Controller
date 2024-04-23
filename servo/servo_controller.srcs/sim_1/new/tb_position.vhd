@@ -55,7 +55,7 @@ begin
         left <= '0';
         right <= '0';
         en <= '0';
-        comp_en <= '0';
+        comp_en <= '1';
 
         -- Reset generation
         -- EDIT: Check that rst is really your reset signal
