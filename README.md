@@ -109,3 +109,9 @@ Press the lower button (BTND) to shut down the whole system. As long as this but
 \
 short app video:\
 https://youtu.be/wzy_NoTWGlA?si=6DzQUGHOYftg_hcf
+
+## References
+
+https://en.wikipedia.org/wiki/Double_dabble
+
+https://allaboutfpga.com/vhdl-code-for-binary-to-bcd-converter/
