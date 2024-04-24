@@ -32,6 +32,9 @@ Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-
 ### State diagram for BIN2BCD component
 
 <img src="https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/images/BIN2BCD_State_Diagram.jpg" alt="State diagram fro BIN2BCD" >
+i_1 = bin_counter == BIN
+
+i_2 = shift_counter == 7
 
 ### Component(s) simulation
 
