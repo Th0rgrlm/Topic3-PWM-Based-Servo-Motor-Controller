@@ -24,9 +24,14 @@ Servo link: https://www.savoxusa.com/products/savsb2274sg-be-black-edition-high-
 
 
 ## Software description
+
+### Schematic
+
 ![imageSchematic](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/images/schematic.png)
 
+### State diagram for BIN2BCD component
 
+<img src="https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/images/images/BIN2BCD_State_Diagram.jpg" alt="State diagram fro BIN2BCD" >
 
 ### Component(s) simulation
 
